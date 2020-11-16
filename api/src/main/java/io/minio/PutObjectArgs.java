@@ -22,7 +22,7 @@ import java.io.InputStream;
 
 /** Argument class of MinioClient.putObject(). */
 public class PutObjectArgs extends PutObjectBaseArgs {
-  private BufferedInputStream stream;
+  protected BufferedInputStream stream;
 
   public BufferedInputStream stream() {
     return stream;
