@@ -677,13 +677,14 @@ public class MinioClient {
               + "http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html";
       throw new InvalidBucketNameException(name, msg);
     }
-    // Bucket names should be dns compatible.
-    if (!name.matches("^[a-z0-9][a-z0-9\\.\\-]+[a-z0-9]$")) {
-      String msg =
-          "bucket name does not follow Amazon S3 standards. For more information refer "
-              + "http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html";
-      throw new InvalidBucketNameException(name, msg);
-    }
+
+    /**
+     * Not a requirement for minio itself // Bucket names should be dns compatible. if
+     * (!name.matches("^[a-z0-9][a-z0-9\\.\\-]+[a-z0-9]$")) { String msg = xx "bucket name does not
+     * follow Amazon S3 standards. For more information refer " +
+     * "http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html"; throw new
+     * InvalidBucketNameException(name, msg); }
+     */
   }
 
   private void checkObjectName(String objectName) throws IllegalArgumentException {
